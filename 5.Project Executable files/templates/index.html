@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict GDP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Ensure the button takes full width */
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter the details to predict GDP</h1>
+        <form action="/data_predict" method="POST">
+            <label for="population_density">Population Density (per sq. mi.):</label>
+            <input type="text" id="population_density" name="population_density" required>
+
+            <label for="phone">Phones (per 1000 people):</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="arable">Arable (% of land):</label>
+            <input type="text" id="arable" name="arable" required>
+            
+            <label for="crops">Crops (%):</label>
+            <input type="text" id="crops" name="crops" required>
+
+            <label for="climate">Climate:</label>
+            <input type="text" id="climate" name="climate" required>
+            
+            <label for="birthrate">Birthrate:</label>
+            <input type="text" id="birthrate" name="birthrate" required>
+
+            <label for="deathrate">Deathrate:</label>
+            <input type="text" id="deathrate" name="deathrate" required>
+            
+            <label for="agriculture">Agriculture (% of GDP):</label>
+            <input type="text" id="agriculture" name="agriculture" required>
+
+            <label for="industry">Industry (% of GDP):</label>
+            <input type="text" id="industry" name="industry" required>
+            
+            <label for="service">Service (% of GDP):</label>
+            <input type="text" id="service" name="service" required>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
